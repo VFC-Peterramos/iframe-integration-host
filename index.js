@@ -30,6 +30,12 @@ document.addEventListener("DOMContentLoaded", function () {
     if (event.data === "close") {
       // We have recieved a command to close the iframe from within the iframe
       console.log("we recieved a close iframe event");
+
+      /**
+       *  If this were evet - they could send along information to some
+       *  audit API or CC to relay to one of our services
+       *  on the gpm side telling us when the flow was abondoned
+       */
       const frameToClose = document.querySelector("#iframe-test");
 
       frameToClose.parentNode.removeChild(frameToClose);
