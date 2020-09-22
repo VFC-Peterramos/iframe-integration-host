@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error(
         "Blocking this event as it is coming from an untrusted cross-origin source."
       );
-      // return; // leave function
+      return; // exit function
     }
     if (event.data === "close") {
       // We have recieved a command to close the iframe from within the iframe
