@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
           objectKey2: false,
         },
       },
-      "http://localhost:3000"
+      "https://vfc-peterramos.github.io/iframe-demo-integration/"
     );
   });
 });
