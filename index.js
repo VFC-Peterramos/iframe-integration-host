@@ -26,12 +26,15 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("message", (event) => {
     // Check to see if Message event is coming from a trusted cross-origin source
     console.log("event.path[0].location.href ===", event.path[0].location.href);
+    console.log("event.origin is ===", event.origin);
+    console.log("event.source ===", event.source);
     console.log("iframeSrc ===", iframeSrc);
 
     if (event.path[0].location.href !== iframeSrc) {
       console.error(
         "Blocking this event as it is coming from an untrusted cross-origin source."
       );
+      // return; // leave function
     }
     if (event.data === "close") {
       // We have recieved a command to close the iframe from within the iframe
