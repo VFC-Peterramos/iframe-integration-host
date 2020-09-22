@@ -3,7 +3,10 @@ function handleOpen() {
   // const openBtnContainer = document.querySelector("#js-open-btn-container");
   const openBtn = document.querySelector("#open");
 
-  newIframe.setAttribute("src", "http://localhost:3000");
+  newIframe.setAttribute(
+    "src",
+    "https://vfc-peterramos.github.io/iframe-demo-integration/"
+  );
   newIframe.setAttribute("height", "600px");
   newIframe.setAttribute("width", "800px");
   newIframe.setAttribute("frameborder", "0");
