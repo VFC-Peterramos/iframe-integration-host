@@ -17,20 +17,15 @@ function handleOpen() {
   openBtn.parentNode.removeChild(openBtn);
 }
 document.addEventListener("DOMContentLoaded", function () {
-  const iframe = document.querySelector("#iframe-test");
   const eventButton = document.querySelector("#trigger-event-btn");
-  const iframeSrc = iframe.getAttribute("src");
   const openButton = `<button onclick=handleOpen() style="display: block" id="open">Open iframe</button>`;
   const openBtnContainer = document.querySelector("#js-open-btn-container");
 
   window.addEventListener("message", (event) => {
     // Check to see if Message event is coming from a trusted cross-origin source
-    console.log("event.path[0].location.href ===", event.path[0].location.href);
     console.log("event.origin is ===", event.origin);
-    console.log("event.source ===", event.source.window.document.URL);
-    console.log("iframeSrc ===", iframeSrc);
 
-    if (event.source.window.document.URL !== iframeSrc) {
+    if (event.origin !== "https://vfc-peterramos.github.io") {
       console.error(
         "Blocking this event as it is coming from an untrusted cross-origin source."
       );
