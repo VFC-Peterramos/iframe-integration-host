@@ -46,7 +46,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
       openBtnContainer.innerHTML = openButton;
     }
-    alert("an event was received from the embedded app!", event.data);
+    alert(
+      "an event was received from the embedded app! " +
+        JSON.stringify(event.data)
+    );
     console.log("event coming from iframe is ===", event);
   });
 
